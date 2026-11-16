@@ -1,0 +1,130 @@
+[gd_scene format=3 uid="uid://cnpctavern02"]
+
+[ext_resource type="Texture2D" uid="uid://bgit4vomosixx" path="res://assets/npc/tavern/Idle_Side-Sheet.png" id="1_idle"]
+[ext_resource type="Texture2D" uid="uid://cmmh2eyf23uem" path="res://assets/npc/tavern/Walk_Side-Sheet.png" id="2_walk"]
+[ext_resource type="Script" path="res://scenes/npc/npc.gd" id="3_npcgd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i0"]
+atlas = ExtResource("1_idle")
+region = Rect2(16, 16, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i1"]
+atlas = ExtResource("1_idle")
+region = Rect2(80, 16, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i2"]
+atlas = ExtResource("1_idle")
+region = Rect2(144, 16, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i3"]
+atlas = ExtResource("1_idle")
+region = Rect2(208, 16, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w0"]
+atlas = ExtResource("2_walk")
+region = Rect2(16, 16, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w1"]
+atlas = ExtResource("2_walk")
+region = Rect2(80, 16, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w2"]
+atlas = ExtResource("2_walk")
+region = Rect2(144, 16, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w3"]
+atlas = ExtResource("2_walk")
+region = Rect2(208, 16, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w4"]
+atlas = ExtResource("2_walk")
+region = Rect2(272, 16, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w5"]
+atlas = ExtResource("2_walk")
+region = Rect2(336, 16, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tavern"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i3")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w5")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_foot"]
+size = Vector2(10, 8)
+
+[sub_resource type="LabelSettings" id="LabelSettings_name"]
+font_size = 10
+outline_size = 3
+outline_color = Color(0, 0, 0, 0.9)
+
+[node name="NPCTavern" type="CharacterBody2D"]
+y_sort_enabled = true
+collision_layer = 2
+collision_mask = 1
+motion_mode = 1
+script = ExtResource("3_npcgd")
+npc_name = "Tabernera"
+greeting_text = "¡Bienvenido a la Taberna del Pueblo!"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_tavern")
+animation = &"idle"
+autoplay = "idle"
+offset = Vector2(0, -12)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_foot")
+
+[node name="InfoLabel" type="Label" parent="."]
+z_index = 4
+texture_filter = 1
+offset_left = -80.0
+offset_top = -44.0
+offset_right = 80.0
+offset_bottom = -20.0
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(80, 24)
+text = "Tabernera"
+label_settings = SubResource("LabelSettings_name")
+horizontal_alignment = 1
+vertical_alignment = 2
