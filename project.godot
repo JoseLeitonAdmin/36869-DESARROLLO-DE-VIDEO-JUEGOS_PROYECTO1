@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="El Pastor que grito Lobo"
-run/main_scene="res://scenes/maps/granero.tscn"
+run/main_scene="uid://bgraneromap01"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+TimeManager="*res://globals/time_manager.gd"
 
 [display]
 
