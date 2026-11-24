@@ -41,8 +41,10 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	var player := get_tree().get_first_node_in_group("player") as Node2D
 	if player != null:
+		var is_stealth: bool = player.has_method("is_stealth_active") and player.is_stealth_active()
+		var detect_radius: float = 12.0 if is_stealth else 28.0
 		var dist_to_player := global_position.distance_to(player.global_position)
-		if dist_to_player < 28.0:
+		if dist_to_player < detect_radius:
 			velocity = Vector2.ZERO
 			_face_position(player.global_position)
 			_play_anim(&"idle")

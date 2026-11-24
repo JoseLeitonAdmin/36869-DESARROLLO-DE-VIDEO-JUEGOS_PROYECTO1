@@ -30,10 +30,13 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	var player := get_tree().get_first_node_in_group("player") as Node2D
-	if player != null and global_position.distance_to(player.global_position) < 26.0:
-		if _bleat_timer <= 0.0 and bleat_label != null:
-			bleat_label.visible = true
-			_bleat_timer = 2.2
+	if player != null:
+		var is_stealth: bool = player.has_method("is_stealth_active") and player.is_stealth_active()
+		var detect_radius: float = 10.0 if is_stealth else 26.0
+		if global_position.distance_to(player.global_position) < detect_radius:
+			if _bleat_timer <= 0.0 and bleat_label != null:
+				bleat_label.visible = true
+				_bleat_timer = 2.2
 	if _bleat_timer > 0.0:
 		_bleat_timer -= delta
 		if _bleat_timer <= 0.0 and bleat_label != null:

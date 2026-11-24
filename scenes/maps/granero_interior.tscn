@@ -5,12 +5,17 @@
 [ext_resource type="Script" path="res://scenes/interactables/door_interactable.gd" id="3_door"]
 [ext_resource type="Script" path="res://scenes/interactables/inspect_interactable.gd" id="4_inspect"]
 [ext_resource type="Texture2D" path="res://assets/effects/light_radial.png" id="5_light"]
+[ext_resource type="Script" path="res://scenes/interactables/lighter_pickup.gd" id="6_lighter_pickup"]
+[ext_resource type="Texture2D" uid="uid://dn3mx5hfq4cj1" path="res://assets/player/Lighter.png" id="7_lighter_tex"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_exit"]
 size = Vector2(36, 26)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_prop"]
 size = Vector2(40, 36)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lighter"]
+size = Vector2(84, 60)
 
 [node name="GraneroInteriorMap" type="Node2D"]
 y_sort_enabled = true
@@ -108,6 +113,24 @@ message_text = "Notas de Tomás: 'Los aldeanos no recuerdan a quienes desapareci
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/WorkbenchInspect"]
 shape = SubResource("RectangleShape2D_prop")
+
+[node name="LighterPickup" type="Area2D" parent="Interactables"]
+position = Vector2(128, 200)
+script = ExtResource("6_lighter_pickup")
+
+[node name="Sprite2D" type="Sprite2D" parent="Interactables/LighterPickup"]
+z_index = 1
+texture_filter = 1
+texture = ExtResource("7_lighter_tex")
+
+[node name="GlowLight" type="PointLight2D" parent="Interactables/LighterPickup"]
+color = Color(1, 0.82, 0.45, 1)
+energy = 0.75
+texture = ExtResource("5_light")
+texture_scale = 0.55
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/LighterPickup"]
+shape = SubResource("RectangleShape2D_lighter")
 
 [node name="SpawnPoints" type="Node2D" parent="."]
 

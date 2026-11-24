@@ -46,11 +46,11 @@ func get_ambient_color(map_name: String, time_val: TimeOfDay = current_time) -> 
 	elif map_name.contains("Guarida"):
 		match time_val:
 			TimeOfDay.DAY:
-				return Color(0.82, 0.86, 0.90, 1.0)
+				return Color(0.05, 0.06, 0.09, 1.0)
 			TimeOfDay.AFTERNOON:
-				return Color(0.70, 0.55, 0.60, 1.0)
+				return Color(0.04, 0.045, 0.075, 1.0)
 			TimeOfDay.NIGHT:
-				return Color(0.24, 0.27, 0.44, 1.0)
+				return Color(0.03, 0.035, 0.06, 1.0)
 	else:
 		# Exteriores: Granja y Pueblo Rural
 		match time_val:

@@ -1,192 +1,232 @@
 [gd_scene format=3 uid="uid://d2q7ynyl2qwh"]
 
-[ext_resource type="Texture2D" uid="uid://n5gk7pl1obbd" path="res://assets/player/pastor_idle.png" id="1_4gmhr"]
-[ext_resource type="Texture2D" uid="uid://cggs3kao7xdac" path="res://assets/player/Idle-Sheet.png" id="2_idlesheet"]
-[ext_resource type="Texture2D" uid="uid://bo43m7e0x5f0i" path="res://assets/player/Run-Sheet.png" id="3_runsheet"]
-[ext_resource type="Script" path="res://scenes/player/pastor.gd" id="4_pastorgd"]
-[ext_resource type="Texture2D" path="res://assets/effects/light_radial.png" id="5_light"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_idle_0"]
-atlas = ExtResource("2_idlesheet")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_idle_1"]
-atlas = ExtResource("2_idlesheet")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_idle_2"]
-atlas = ExtResource("2_idlesheet")
-region = Rect2(64, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_idle_3"]
-atlas = ExtResource("2_idlesheet")
-region = Rect2(96, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_run_0"]
-atlas = ExtResource("3_runsheet")
-region = Rect2(16, 32, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_run_1"]
-atlas = ExtResource("3_runsheet")
-region = Rect2(80, 32, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_run_2"]
-atlas = ExtResource("3_runsheet")
-region = Rect2(144, 32, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_run_3"]
-atlas = ExtResource("3_runsheet")
-region = Rect2(208, 32, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_run_4"]
-atlas = ExtResource("3_runsheet")
-region = Rect2(272, 32, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_run_5"]
-atlas = ExtResource("3_runsheet")
-region = Rect2(336, 32, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_18k8s"]
-atlas = ExtResource("1_4gmhr")
-region = Rect2(0, 0, 24, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_668fr"]
-atlas = ExtResource("1_4gmhr")
-region = Rect2(24, 0, 24, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_rsx3g"]
-atlas = ExtResource("1_4gmhr")
-region = Rect2(48, 0, 24, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_38wbw"]
-atlas = ExtResource("1_4gmhr")
-region = Rect2(72, 0, 24, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_n0xy0"]
-atlas = ExtResource("1_4gmhr")
-region = Rect2(96, 0, 24, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_tmsix"]
-atlas = ExtResource("1_4gmhr")
-region = Rect2(120, 0, 24, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_te7mn"]
-atlas = ExtResource("1_4gmhr")
-region = Rect2(144, 0, 24, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_v2mk5"]
-atlas = ExtResource("1_4gmhr")
-region = Rect2(168, 0, 24, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_t3i57"]
-atlas = ExtResource("1_4gmhr")
-region = Rect2(192, 0, 24, 32)
+[ext_resource type="Script" uid="uid://5hyhh2da53dp" path="res://scenes/player/pastor.gd" id="1_pastorgd"]
+[ext_resource type="Texture2D" uid="uid://cxafqf5fp2h6e" path="res://assets/effects/light_radial.png" id="2_light"]
+[ext_resource type="Texture2D" uid="uid://dna8xxbqbs7vl" path="res://assets/player/Player_idle_down/fotograma0000.png" id="3_idle_d0"]
+[ext_resource type="Texture2D" uid="uid://dr3whnmncgvsp" path="res://assets/player/Player_idle_down/fotograma0001.png" id="4_idle_d1"]
+[ext_resource type="Texture2D" uid="uid://ccptdonkmwvbb" path="res://assets/player/Player_idle_sides/fotograma0000.png" id="5_idle_s0"]
+[ext_resource type="Texture2D" uid="uid://gohafhyhk4lm" path="res://assets/player/Player_idle_sides/fotograma0001.png" id="6_idle_s1"]
+[ext_resource type="Texture2D" uid="uid://cjs63r081dgcm" path="res://assets/player/Player_idle_up/fotograma0000.png" id="7_idle_u0"]
+[ext_resource type="Texture2D" uid="uid://ul6q1vp73g2c" path="res://assets/player/Player_idle_up/fotograma0001.png" id="8_idle_u1"]
+[ext_resource type="Texture2D" uid="uid://b0gq6hnp72q7m" path="res://assets/player/Player_walking_down/fotograma0001.png" id="9_walk_d1"]
+[ext_resource type="Texture2D" uid="uid://bvkpgpifxaamx" path="res://assets/player/Player_walking_down/fotograma0002.png" id="10_walk_d2"]
+[ext_resource type="Texture2D" uid="uid://q2go7wofboo8" path="res://assets/player/Player_walking_down/fotograma0003.png" id="11_walk_d3"]
+[ext_resource type="Texture2D" uid="uid://bfun5ofeddvi5" path="res://assets/player/Player_walking_sides/fotograma0000.png" id="12_walk_s0"]
+[ext_resource type="Texture2D" uid="uid://cy0tk0vtmdfcx" path="res://assets/player/Player_walking_sides/fotograma0001.png" id="13_walk_s1"]
+[ext_resource type="Texture2D" uid="uid://cdb4p05vmirjv" path="res://assets/player/Player_walking_sides/fotograma0002.png" id="14_walk_s2"]
+[ext_resource type="Texture2D" uid="uid://dn0cqdhval73h" path="res://assets/player/Player_walking_up/fotograma0001.png" id="15_walk_u1"]
+[ext_resource type="Texture2D" uid="uid://mvpfhblsul0n" path="res://assets/player/Player_walking_up/fotograma0002.png" id="16_walk_u2"]
+[ext_resource type="Texture2D" uid="uid://cb2320fdl6mnn" path="res://assets/player/Player_walking_up/fotograma0003.png" id="17_walk_u3"]
+[ext_resource type="Texture2D" uid="uid://csg3j022rno6p" path="res://assets/player/Player_stealth_down/fotograma0001.png" id="18_stealth_d1"]
+[ext_resource type="Texture2D" uid="uid://1enhgpg3asad" path="res://assets/player/Player_stealth_down/fotograma0002.png" id="19_stealth_d2"]
+[ext_resource type="Texture2D" uid="uid://ck0winuhhfn8w" path="res://assets/player/Player_stealth_down/fotograma0003.png" id="20_stealth_d3"]
+[ext_resource type="Texture2D" uid="uid://guq760wy235p" path="res://assets/player/Player_stealth_sides/fotograma0000.png" id="21_stealth_s0"]
+[ext_resource type="Texture2D" uid="uid://c82hdjpbudcjf" path="res://assets/player/Player_stealth_sides/fotograma0001.png" id="22_stealth_s1"]
+[ext_resource type="Texture2D" uid="uid://b3yl6ueak15jr" path="res://assets/player/Player_stealth_up/fotograma0001.png" id="23_stealth_u1"]
+[ext_resource type="Texture2D" uid="uid://ds88fscihjcsb" path="res://assets/player/Player_stealth_up/fotograma0002.png" id="24_stealth_u2"]
+[ext_resource type="Texture2D" uid="uid://cd34r54q3vr3o" path="res://assets/player/Player_stealth_up/fotograma0003.png" id="25_stealth_u3"]
+[ext_resource type="Texture2D" uid="uid://dn3mx5hfq4cj1" path="res://assets/player/Lighter.png" id="26_lighter"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_txfju"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_idle_0")
+"texture": ExtResource("3_idle_d0")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_idle_1")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_idle_2")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_idle_3")
+"texture": ExtResource("4_idle_d1")
 }],
-"loop": true,
-"name": &"idle",
-"speed": 7.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_18k8s")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_668fr")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_rsx3g")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_38wbw")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_n0xy0")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_tmsix")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_te7mn")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_v2mk5")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_t3i57")
-}],
-"loop": true,
+"loop": 1,
 "name": &"idle_down",
-"speed": 10.0
+"speed": 3.5
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_run_0")
+"texture": ExtResource("5_idle_s0")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_run_1")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_run_2")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_run_3")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_run_4")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_run_5")
+"texture": ExtResource("6_idle_s1")
 }],
-"loop": true,
-"name": &"run",
-"speed": 10.0
+"loop": 1,
+"name": &"idle_side",
+"speed": 3.5
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_idle_u0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_idle_u1")
+}],
+"loop": 1,
+"name": &"idle_up",
+"speed": 3.5
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18_stealth_d1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_stealth_d2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_stealth_d3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_stealth_d2")
+}],
+"loop": 1,
+"name": &"stealth_down",
+"speed": 5.5
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_stealth_d2")
+}],
+"loop": 1,
+"name": &"stealth_idle_down",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("22_stealth_s1")
+}],
+"loop": 1,
+"name": &"stealth_idle_side",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("24_stealth_u2")
+}],
+"loop": 1,
+"name": &"stealth_idle_up",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("21_stealth_s0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_stealth_s1")
+}],
+"loop": 1,
+"name": &"stealth_side",
+"speed": 4.5
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("23_stealth_u1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_stealth_u2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_stealth_u3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_stealth_u2")
+}],
+"loop": 1,
+"name": &"stealth_up",
+"speed": 5.5
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_walk_d1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_walk_d2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_walk_d3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_walk_d2")
+}],
+"loop": 1,
+"name": &"walk_down",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_walk_s0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_walk_s1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_walk_s0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_walk_s2")
+}],
+"loop": 1,
+"name": &"walk_side",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_walk_u1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_walk_u2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_walk_u3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_walk_u2")
+}],
+"loop": 1,
+"name": &"walk_up",
+"speed": 8.0
 }]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_unshaded"]
+light_mode = 1
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_foot"]
 size = Vector2(10, 8)
 
 [node name="Pastor" type="CharacterBody2D" unique_id=1742901297]
 y_sort_enabled = true
-collision_layer = 1
-collision_mask = 1
 motion_mode = 1
-script = ExtResource("4_pastorgd")
+script = ExtResource("1_pastorgd")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1246573785]
 texture_filter = 1
+scale = Vector2(0.8, 0.8)
 sprite_frames = SubResource("SpriteFrames_txfju")
-animation = &"idle"
-autoplay = "idle"
-offset = Vector2(0, -12)
+animation = &"idle_down"
+autoplay = "idle_down"
+offset = Vector2(0, -11)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="HeldLantern" type="Sprite2D" parent="." unique_id=945708721]
+visible = false
+z_index = 1
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_unshaded")
+position = Vector2(5.5, -6)
+scale = Vector2(0.48, 0.48)
+texture = ExtResource("26_lighter")
+offset = Vector2(0, 3)
+region_enabled = true
+region_rect = Rect2(26, 24, 10, 18)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=129141142]
 position = Vector2(0, -2)
 shape = SubResource("RectangleShape2D_foot")
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1823972571]
 zoom = Vector2(3, 3)
 position_smoothing_enabled = true
 position_smoothing_speed = 8.0
 
-[node name="LanternLight" type="PointLight2D" parent="."]
-position = Vector2(0, -10)
+[node name="LanternLight" type="PointLight2D" parent="." unique_id=1197948181]
+position = Vector2(5.5, -4.5)
 enabled = false
 color = Color(1, 0.84, 0.56, 1)
-energy = 1.35
-texture = ExtResource("5_light")
-texture_scale = 1.65
+energy = 0.79
+texture = ExtResource("2_light")
+texture_scale = 1.85
