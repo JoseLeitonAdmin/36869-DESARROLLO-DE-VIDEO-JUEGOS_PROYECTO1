@@ -9,6 +9,7 @@
 [ext_resource type="Shader" uid="uid://c0gygdaokugoc" path="res://shaders/canopy_fade.gdshader" id="7_shader"]
 [ext_resource type="Texture2D" uid="uid://cxafqf5fp2h6e" path="res://assets/effects/light_radial.png" id="10_light"]
 [ext_resource type="Script" uid="uid://b7536753n8gaj" path="res://scenes/maps/canopy_controller.gd" id="11_canopy"]
+[ext_resource type="PackedScene" uid="uid://cwolfnpc00001" path="res://scenes/npc/wolf.tscn" id="12_wolf"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_canopy"]
 shader = ExtResource("7_shader")
@@ -69,6 +70,15 @@ wait_time = 2.2
 loop_route = false
 patrol_waypoints = PackedVector2Array(464, 736, 360, 736, 568, 736)
 
+[node name="LoboBosque" parent="NPCs" instance=ExtResource("12_wolf")]
+position = Vector2(464, 272)
+move_speed = 54.0
+wander_radius = 68.0
+rest_spot_wait_time = 4.0
+
+[node name="RestSpot" type="Marker2D" parent="NPCs/LoboBosque"]
+position = Vector2(0, 0)
+
 [node name="Pastor" parent="." unique_id=1490216035 instance=ExtResource("2_pastor")]
 position = Vector2(464, 56)
 
@@ -82,7 +92,7 @@ collision_enabled = false
 script = ExtResource("11_canopy")
 
 [node name="AmbientTint" type="CanvasModulate" parent="." unique_id=1550847878]
-color = Color(0.05, 0.06, 0.09, 1)
+color = Color(0.029747361, 0.056168966, 0.12915757, 1)
 
 [node name="Lights" type="Node2D" parent="." unique_id=1001945307]
 

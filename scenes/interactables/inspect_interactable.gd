@@ -4,6 +4,9 @@ extends Area2D
 @export var prompt_text: String = "[E] Examinar"
 @export var title_text: String = "Nota de Campo"
 @export_multiline var message_text: String = "Observas el entorno con atención."
+@export var grant_item_id: String = ""
+@export var grant_item_name: String = ""
+@export var grant_item_icon: String = ""
 
 var _player_inside: bool = false
 var _prompt_label: Label = null
@@ -39,6 +42,8 @@ func _unhandled_input(event: InputEvent) -> void:
 	if not _player_inside:
 		return
 	if _is_interact_event(event):
+		if not grant_item_id.is_empty():
+			GameState.add_item(grant_item_id, grant_item_name if not grant_item_name.is_empty() else title_text, grant_item_icon)
 		var player := get_tree().get_first_node_in_group("player")
 		if player != null and player.has_method("show_story_message"):
 			get_viewport().set_input_as_handled()

@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" path="res://assets/effects/light_radial.png" id="5_light"]
 [ext_resource type="Script" path="res://scenes/interactables/lighter_pickup.gd" id="6_lighter_pickup"]
 [ext_resource type="Texture2D" uid="uid://dn3mx5hfq4cj1" path="res://assets/player/Lighter.png" id="7_lighter_tex"]
+[ext_resource type="Script" path="res://scenes/interactables/bed_interactable.gd" id="8_bed"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_exit"]
 size = Vector2(36, 26)
@@ -96,10 +97,8 @@ shape = SubResource("RectangleShape2D_exit")
 
 [node name="BedInspect" type="Area2D" parent="Interactables"]
 position = Vector2(88, 152)
-script = ExtResource("4_inspect")
-prompt_text = "[E] Cama de Tomás"
-title_text = "Cama de Tomás"
-message_text = "Tu refugio antes de que caiga la noche. Cuando estés listo para investigar el pueblo, sal por la puerta."
+script = ExtResource("8_bed")
+prompt_text = "[E] Descansar / Guardar"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/BedInspect"]
 shape = SubResource("RectangleShape2D_prop")

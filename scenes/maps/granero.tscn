@@ -71,7 +71,6 @@ position = Vector2(168, 520)
 wander_radius = 34.0
 
 [node name="Oveja4" parent="SheepHerd" unique_id=2059126727 instance=ExtResource("6_sheep")]
-visible = false
 position = Vector2(288, 528)
 wander_radius = 34.0
 

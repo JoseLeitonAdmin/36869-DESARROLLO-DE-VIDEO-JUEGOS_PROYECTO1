@@ -25,7 +25,28 @@ func _ready() -> void:
 	_state_timer = _rng.randf_range(0.5, max_wait_time)
 	if bleat_label != null:
 		bleat_label.visible = false
+	if not GameState.sheep_changed.is_connected(_on_sheep_count_changed):
+		GameState.sheep_changed.connect(_on_sheep_count_changed)
+	_sync_herd_visibility()
 	_play_anim(&"idle")
+
+
+func _exit_tree() -> void:
+	if GameState.sheep_changed.is_connected(_on_sheep_count_changed):
+		GameState.sheep_changed.disconnect(_on_sheep_count_changed)
+
+
+func _on_sheep_count_changed(_new_count: int) -> void:
+	_sync_herd_visibility()
+
+
+func _sync_herd_visibility() -> void:
+	var alive := get_index() < GameState.sheep_count
+	visible = alive
+	set_physics_process(alive)
+	var col := get_node_or_null("CollisionShape2D") as CollisionShape2D
+	if col != null:
+		col.disabled = not alive
 
 
 func _physics_process(delta: float) -> void:

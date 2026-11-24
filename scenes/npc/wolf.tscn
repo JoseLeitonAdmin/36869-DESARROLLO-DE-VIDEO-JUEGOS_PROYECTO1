@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://cwolfnpc00001"]
+
+[ext_resource type="Script" path="res://scenes/npc/wolf.gd" id="1_wolfgd"]
+[ext_resource type="Texture2D" uid="uid://btv56g2nis3aj" path="res://assets/wolf/Wolf_idle/fotograma0000.png" id="2_idle0"]
+[ext_resource type="Texture2D" uid="uid://dakhh1kdc5urb" path="res://assets/wolf/Wolf_idle/fotograma0001.png" id="3_idle1"]
+[ext_resource type="Texture2D" uid="uid://bkinugjn8fxbc" path="res://assets/wolf/Wolf_idle/fotograma0002.png" id="4_idle2"]
+[ext_resource type="Texture2D" uid="uid://d3obs76d10okf" path="res://assets/wolf/Wolf_idle/fotograma0003.png" id="5_idle3"]
+[ext_resource type="Texture2D" uid="uid://cryo8qwtnl3ar" path="res://assets/wolf/Wolf_walking/fotograma0000.png" id="6_walk0"]
+[ext_resource type="Texture2D" uid="uid://ctr3cp2hbcsr2" path="res://assets/wolf/Wolf_walking/fotograma0001.png" id="7_walk1"]
+[ext_resource type="Texture2D" uid="uid://hg6jm2vbkbwm" path="res://assets/wolf/Wolf_walking/fotograma0002.png" id="8_walk2"]
+[ext_resource type="Texture2D" uid="uid://dd4h3w4gvwjq5" path="res://assets/wolf/Wolf_walking/fotograma0003.png" id="9_walk3"]
+[ext_resource type="Texture2D" uid="uid://d2aioyvj2hpcc" path="res://assets/wolf/Wolf_walking/fotograma0004.png" id="10_walk4"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wolf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_idle0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_idle1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_idle2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_idle3")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_walk0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_walk1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_walk2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_walk3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_walk4")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wolf"]
+size = Vector2(22, 10)
+
+[node name="Wolf" type="CharacterBody2D"]
+y_sort_enabled = true
+collision_layer = 2
+collision_mask = 1
+motion_mode = 1
+script = ExtResource("1_wolfgd")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(0.85, 0.85)
+sprite_frames = SubResource("SpriteFrames_wolf")
+animation = &"idle"
+autoplay = "idle"
+offset = Vector2(0, -11)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_wolf")
