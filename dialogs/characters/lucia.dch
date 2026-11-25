@@ -1,0 +1,15 @@
+{
+"@path": "res://addons/dialogic/Resources/character.gd",
+"@subpath": "",
+"_translation_id": "",
+"color": Color(0.68, 0.85, 0.95, 1),
+"custom_info": {},
+"default_portrait": "",
+"description": "Aldeana que vigila el puente sur hacia el bosque.",
+"display_name": "Lucía (Aldeana)",
+"mirror": false,
+"nicknames": ["Lucía"],
+"offset": Vector2(0, 0),
+"portraits": {},
+"scale": 1.0
+}

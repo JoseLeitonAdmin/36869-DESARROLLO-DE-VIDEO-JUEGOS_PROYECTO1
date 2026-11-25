@@ -1,0 +1,15 @@
+{
+"@path": "res://addons/dialogic/Resources/character.gd",
+"@subpath": "",
+"_translation_id": "",
+"color": Color(0.96, 0.82, 0.45, 1),
+"custom_info": {},
+"default_portrait": "",
+"description": "El joven pastor encargado del rebaño de la granja.",
+"display_name": "Tomás (Pastor)",
+"mirror": false,
+"nicknames": ["Tomás"],
+"offset": Vector2(0, 0),
+"portraits": {},
+"scale": 1.0
+}

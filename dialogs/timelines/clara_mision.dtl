@@ -1,0 +1,47 @@
+if {GameState.village_quest_status} == 0:
+	clara: ¡Tomás! Menos mal que bajaste de la granja al pueblo. ¿Has mirado la Torre del Reloj de la plaza?
+	tomas: Las manecillas están detenidas justo antes de la medianoche. ¿Qué ocurrió anoche, Clara?
+	clara: Cuando se escucharon los aullidos en el lindero sur, corrí desde el mercado del este y se me cayó el Engranaje del Reloj de mi hermano... Sin esa pieza, nadie en el pueblo recuerda a los que desaparecen cada noche.
+	- Yo buscaré el engranaje en el pueblo y te lo traeré
+		[signal arg="accept_quest"]
+		tomas: Tranquila, Clara. Yo recorreré el pueblo, encontraré ese engranaje y te lo devolveré.
+		clara: ¡Gracias de corazón, Tomás! Lo perdí en el extremo este del pueblo, cerca de los árboles al norte del puesto del mercader Braulio.
+	- ¿Por qué dices que los aldeanos olvidan a quienes desaparecen?
+		tomas: Marta dijo algo parecido en la taberna... ¿Cómo es posible que olviden a su propia gente?
+		clara: Es la niebla que sube desde la Guarida del Lobo. Cada vez que el Lobo reclama a alguien, su recuerdo se borra al amanecer. Ese engranaje grabado es la única prueba que me queda. ¿Me ayudarás a recuperarlo?
+		- Cuenta conmigo, buscaré el engranaje por el pueblo
+			[signal arg="accept_quest"]
+			tomas: No dejaré que el pueblo olvide la verdad. Buscaré cerca del mercado del este y te lo traeré.
+			clara: ¡Qué alivio escucharte! Busca junto a los árboles al norte del puesto de Braulio, en el lado este del pueblo.
+		- Primero debo vigilar mis ovejas, volveré más tarde
+			tomas: Debo asegurarme de que el corral esté seguro antes de ponerme a buscar. Volveré en cuanto pueda.
+			clara: Lo entiendo, Tomás. Tus ovejas son tu vida, pero por favor no tardes demasiado... estaré aquí en la plaza.
+	- Ahora no puedo detenerme, debo regresar a la granja
+		tomas: Lo siento, Clara. Debo volver al granero antes de que caiga la noche.
+		clara: Ten mucho cuidado en el camino, Tomás. Si cambias de opinión, te estaré esperando junto a la Torre del Reloj.
+elif {GameState.village_quest_status} == 1:
+	clara: Tomás, ¿pudiste encontrar el Engranaje del Reloj que perdí en el pueblo?
+	- Recuérdame por dónde se te cayó exactamente
+		tomas: El pueblo es grande, Clara. ¿En qué rincón debería buscar primero?
+		clara: Huía desde el rincón este del pueblo hacia la plaza. Busca entre la hierba junto a los árboles que están justo al norte del puesto del mercader Braulio.
+	- Aún lo estoy buscando, enseguida te lo traigo
+		tomas: Todavía estoy revisando los alrededores del pueblo. No tardaré en encontrarlo.
+		clara: Gracias por no rendirte, Tomás. Si hablas con Braulio el mercader, quizá él haya visto dónde cayó.
+elif {GameState.village_quest_status} == 2:
+	clara: ¡Tomás! Veo un brillo de bronce en tu zurrón... ¿Es el Engranaje del Reloj?
+	- Entregar el Engranaje del Reloj a Clara
+		[signal arg="deliver_quest"]
+		tomas: Aquí lo tienes, Clara. Estaba oculto cerca de los árboles del este, tal como dijiste.
+		clara: ¡Lo recuperaste! Mira las inscripciones... aún conserva la fecha de la primera noche en que el Lobo acechó el valle.
+		clara: Escúchame bien, Tomás: mi hermano descubrió que el Lobo del bosque teme el haz directo de tu lámpara y pierde tu rastro si caminas agachado en sigilo. ¡Que este recuerdo proteja también a tu rebaño!
+	- Esperar un momento antes de entregarlo
+		tomas: Déjame observar un instante más las marcas que tiene grabadas antes de dártelo.
+		clara: Claro, Tomás, pero entrégamelo cuando termines para que podamos guardarlo a salvo en la plaza.
+else:
+	clara: Gracias por devolverme el Engranaje del Reloj, Tomás. Mientras conservemos la memoria, el pueblo no volverá a ignorar tus advertencias.
+	- ¿Qué sabes sobre la Guarida del Lobo al sur?
+		tomas: ¿Qué hay más allá del último farol cruzando el puente del sur?
+		clara: Más allá del farol la penumbra es total. Enciende tu lámpara con [F] para alumbrar hacia adelante y usa el sigilo con [C] cuando escuches las pisadas del Lobo.
+	- Cuídate mucho, Clara
+		tomas: Mantente cerca de los faroles de la plaza, Clara. Yo vigilaré el lindero.
+		clara: Que la luz de tu lámpara te guíe siempre de regreso, Pastor.

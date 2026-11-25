@@ -160,6 +160,16 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventKey:
 		var key_ev := event as InputEventKey
 		if key_ev.pressed and not key_ev.echo:
+			if is_dialog_active():
+				if key_ev.keycode == KEY_E:
+					var dialogic_node := get_node_or_null("/root/Dialogic")
+					if dialogic_node != null and int(dialogic_node.get("current_state")) != 2:
+						var inputs_sub: Node = dialogic_node.get("Inputs") as Node
+						if inputs_sub != null and inputs_sub.has_method("handle_input"):
+							inputs_sub.call("handle_input")
+							get_viewport().set_input_as_handled()
+				return
+
 			if key_ev.keycode == KEY_ESCAPE:
 				if _bed_menu != null and _bed_menu.visible:
 					close_bed_save_menu()
@@ -183,8 +193,9 @@ func _unhandled_input(event: InputEvent) -> void:
 
 
 func _physics_process(_delta: float) -> void:
-	if get_tree().paused or is_menu_open():
+	if get_tree().paused or is_menu_open() or is_dialog_active():
 		velocity = Vector2.ZERO
+		_update_animation(Vector2.ZERO, false)
 		return
 
 	var input_dir := _get_movement_input()
@@ -304,6 +315,17 @@ func is_menu_open() -> bool:
 	var pause_open := _pause_menu != null and _pause_menu.visible
 	var bed_open := _bed_menu != null and _bed_menu.visible
 	return pause_open or bed_open
+
+
+func is_dialog_active() -> bool:
+	var dialogic_node := get_node_or_null("/root/Dialogic")
+	return dialogic_node != null and dialogic_node.get("current_timeline") != null
+
+
+func hide_story_message() -> void:
+	if _dialog_panel != null:
+		_dialog_panel.visible = false
+	_dialog_timer = 0.0
 
 
 func show_story_message(title_text: String, body_text: String) -> void:

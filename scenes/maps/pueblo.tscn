@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://cxafqf5fp2h6e" path="res://assets/effects/light_radial.png" id="10_light"]
 [ext_resource type="Script" uid="uid://b7536753n8gaj" path="res://scenes/maps/canopy_controller.gd" id="11_canopy"]
 [ext_resource type="Texture2D" uid="uid://dgsjintlrnexy" path="res://assets/structures/clock_face.png" id="12_clock"]
+[ext_resource type="Script" path="res://scenes/interactables/quest_item_pickup.gd" id="13_quest_pickup"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_canopy"]
 shader = ExtResource("9_shader")
@@ -21,6 +22,9 @@ shader_parameter/min_alpha = 0.34
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_inspect"]
 size = Vector2(44, 34)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_quest_item"]
+radius = 22.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_to_granero"]
 size = Vector2(16, 112)
@@ -69,6 +73,7 @@ y_sort_enabled = true
 position = Vector2(184, 320)
 npc_name = "Marta (Tabernera)"
 greeting_text = "¡Pasa por la taberna, Tomás! Aunque nadie recuerda al viejo Mateo..."
+dialog_timeline = "res://dialogs/timelines/marta_pueblo.dtl"
 move_speed = 38.0
 wait_time = 2.4
 loop_route = false
@@ -78,6 +83,7 @@ patrol_waypoints = PackedVector2Array(184, 320, 312, 320, 264, 432)
 position = Vector2(472, 360)
 npc_name = "Clara (Aldeana)"
 greeting_text = "¿Has notado que el reloj de la plaza se detuvo?"
+dialog_timeline = "res://dialogs/timelines/clara_mision.dtl"
 wait_time = 1.8
 patrol_waypoints = PackedVector2Array(472, 360, 696, 360, 696, 512, 472, 512)
 
@@ -85,6 +91,7 @@ patrol_waypoints = PackedVector2Array(472, 360, 696, 360, 696, 512, 472, 512)
 position = Vector2(264, 448)
 npc_name = "Lucía (Aldeana)"
 greeting_text = "No cruces el puente del sur al anochecer..."
+dialog_timeline = "res://dialogs/timelines/lucia_pueblo.dtl"
 move_speed = 42.0
 wait_time = 2.2
 loop_route = false
@@ -94,6 +101,7 @@ patrol_waypoints = PackedVector2Array(264, 448, 464, 448, 584, 520, 584, 760)
 position = Vector2(792, 496)
 npc_name = "Braulio (Mercader)"
 greeting_text = "¡Tengo aceite de linterna y provisiones frescas!"
+dialog_timeline = "res://dialogs/timelines/braulio_pueblo.dtl"
 move_speed = 46.0
 loop_route = false
 patrol_waypoints = PackedVector2Array(792, 496, 792, 432, 696, 432, 872, 432)
@@ -102,6 +110,7 @@ patrol_waypoints = PackedVector2Array(792, 496, 792, 432, 696, 432, 872, 432)
 position = Vector2(728, 280)
 npc_name = "Merlín (Sabio)"
 greeting_text = "Hacia el sur, cruzando el puente, está la Guarida del Lobo."
+dialog_timeline = "res://dialogs/timelines/merlin_pueblo.dtl"
 move_speed = 40.0
 wait_time = 2.5
 loop_route = false
@@ -215,6 +224,25 @@ message_text = "AVISO: Queda prohibido adentrarse hacia el bosque del sur tras e
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/NoticeBoardInspect" unique_id=900857282]
 shape = SubResource("RectangleShape2D_inspect")
+
+[node name="EngranajePerdido" type="Area2D" parent="Interactables" unique_id=1954012388]
+position = Vector2(824, 392)
+script = ExtResource("13_quest_pickup")
+item_title = "Engranaje del Reloj"
+
+[node name="Sprite2D" type="Sprite2D" parent="Interactables/EngranajePerdido" unique_id=1954012389]
+texture_filter = 1
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("12_clock")
+
+[node name="GlowLight" type="PointLight2D" parent="Interactables/EngranajePerdido" unique_id=1954012390]
+color = Color(1, 0.88, 0.48, 1)
+energy = 0.85
+texture = ExtResource("10_light")
+texture_scale = 0.45
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/EngranajePerdido" unique_id=1954012391]
+shape = SubResource("CircleShape2D_quest_item")
 
 [node name="SpawnPoints" type="Node2D" parent="." unique_id=2033343633]
 

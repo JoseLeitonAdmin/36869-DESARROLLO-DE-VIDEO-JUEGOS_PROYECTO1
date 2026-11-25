@@ -58,6 +58,7 @@ y_sort_enabled = true
 position = Vector2(464, 112)
 npc_name = "Dante (Explorador)"
 greeting_text = "¡Este farol es la última luz! Pulsa [F] para encender tu lámpara antes de entrar al bosque oscuro."
+dialog_timeline = "res://dialogs/timelines/dante_guarida.dtl"
 loop_route = false
 patrol_waypoints = PackedVector2Array(464, 112, 424, 112, 504, 112)
 
@@ -65,19 +66,19 @@ patrol_waypoints = PackedVector2Array(464, 112, 424, 112, 504, 112)
 position = Vector2(464, 736)
 npc_name = "Aldo (Erudito)"
 greeting_text = "¡Ten cuidado! La cámara ritual del Lobo está justo detrás de esta puerta en la penumbra."
+dialog_timeline = "res://dialogs/timelines/aldo_guarida.dtl"
 move_speed = 40.0
 wait_time = 2.2
 loop_route = false
 patrol_waypoints = PackedVector2Array(464, 736, 360, 736, 568, 736)
 
-[node name="LoboBosque" parent="NPCs" instance=ExtResource("12_wolf")]
+[node name="LoboBosque" parent="NPCs" unique_id=1909742851 instance=ExtResource("12_wolf")]
 position = Vector2(464, 272)
 move_speed = 54.0
 wander_radius = 68.0
 rest_spot_wait_time = 4.0
 
-[node name="RestSpot" type="Marker2D" parent="NPCs/LoboBosque"]
-position = Vector2(0, 0)
+[node name="RestSpot" type="Marker2D" parent="NPCs/LoboBosque" unique_id=1518947823]
 
 [node name="Pastor" parent="." unique_id=1490216035 instance=ExtResource("2_pastor")]
 position = Vector2(464, 56)

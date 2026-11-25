@@ -1,0 +1,10 @@
+mateo: ¡Hola, Tomás! Acabo de contar el rebaño en el corral: las ovejas están tranquilas, pero no debemos confiarnos.
+- ¿Cómo están las ovejas del corral?
+	tomas: ¿Has notado si las ovejas se ponen nerviosas cuando cae la tarde?
+	mateo: Se agrupan cerca del portón en cuanto baja el sol. Recuerda que cada oveja de tu rebaño es tu vida como pastor; si te acercas a ellas en sigilo con [C], ni siquiera se asustarán.
+- ¿Viste dónde dejé mi lámpara de mano?
+	tomas: Necesito mi lámpara para inspeccionar el camino oscuro del sur.
+	mateo: La dejaste sobre la mesa de madera dentro de tu cabaña, justo al norte del corral. Entra con [E], tómala y podrás encenderla en cualquier momento pulsando [F].
+- Mantén vigilado el corral mientras voy al pueblo
+	tomas: Voy a acercarme al pueblo para hablar con los aldeanos. Vigila bien la cerca, Mateo.
+	mateo: ¡Descuida, patrón! Y cuando vuelvas cansado, puedes descansar y guardar tu progreso en la cama de la cabaña.

@@ -1,0 +1,15 @@
+{
+"@path": "res://addons/dialogic/Resources/character.gd",
+"@subpath": "",
+"_translation_id": "",
+"color": Color(0.92, 0.58, 0.42, 1),
+"custom_info": {},
+"default_portrait": "",
+"description": "Dueña de la taberna del pueblo.",
+"display_name": "Marta (Tabernera)",
+"mirror": false,
+"nicknames": ["Marta"],
+"offset": Vector2(0, 0),
+"portraits": {},
+"scale": 1.0
+}

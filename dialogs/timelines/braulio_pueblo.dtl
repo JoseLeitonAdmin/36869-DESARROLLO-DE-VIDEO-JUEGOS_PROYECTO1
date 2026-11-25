@@ -1,0 +1,14 @@
+braulio: ¡Bienvenido a mi puesto, Tomás! Tengo aceite refinado para lámparas, cuerda resistente y provisiones para las noches largas.
+if {GameState.village_quest_status} == 1:
+	- ¿Has visto el Engranaje del Reloj que perdió Clara?
+		tomas: Braulio, Clara perdió un antiguo engranaje de reloj por este lado del pueblo anoche. ¿Has visto algo?
+		braulio: ¡Conque era de ella! Hace un rato vi un destello metálico entre la hierba, justo al norte de mi puesto, junto a los árboles del extremo este. Ve a recogerlo con [E] antes de que alguien más lo pise.
+- ¿Tienes consejos para usar mejor mi lámpara?
+	tomas: La oscuridad del bosque del sur es cada vez más densa. ¿Cómo puedo aprovechar mejor la lámpara?
+	braulio: Tu lámpara de pastor concentra su haz de luz hacia adelante, donde miras, y deja un halo suave detrás. Si aún no la llevas contigo, recógela en la mesa de tu cabaña y enciéndela con [F].
+- ¿Qué sabes sobre moverse sin ser detectado?
+	tomas: Dicen que las criaturas del bosque tienen el oído muy fino.
+	braulio: ¡Así es! Si pulsas [C] para agacharte en modo sigilo, tus pasos serán mucho más silenciosos y ni las bestias ni los aldeanos te detectarán a distancia.
+- Solo estaba revisando las mercancías, hasta luego
+	tomas: Gracias, Braulio. Volveré si necesito más provisiones.
+	braulio: ¡Aquí estaré mientras los faroles del pueblo sigan encendidos!

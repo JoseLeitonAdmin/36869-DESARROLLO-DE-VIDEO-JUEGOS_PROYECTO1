@@ -1,0 +1,12 @@
+aldo: ¡Por las estrellas, Tomás! Lograste cruzar toda la espesura del Bosque Oscuro sin que el Lobo te detuviera.
+- ¿Qué descubriste en las runas de esta cámara?
+	tomas: Aldo, ¿qué dicen las inscripciones talladas frente a la guarida?
+	aldo: Las runas hablan de un pacto antiguo: el Lobo se alimenta del silencio y la duda de la aldea. Cuando un pastor grita sin pruebas, la niebla borra la memoria de los aldeanos.
+	tomas: Por eso Clara necesitaba recuperar el engranaje grabado del reloj en el pueblo...
+	aldo: ¡Exactamente! Con pruebas reales y la luz de tu lámpara, el engaño de la bestia empieza a debilitarse.
+- ¿Es seguro acercarse al altar del sur?
+	tomas: ¿Qué hay justo detrás de estos muros de piedra?
+	aldo: Es el altar ritual del Lobo Feroz. Puedes inspeccionarlo con [E] llevando tu lámpara encendida, pero no apagues tu luz en ningún momento.
+- Regresaré al pueblo con esta información
+	tomas: Debo volver con los aldeanos antes de que la noche sea más cerrada. Cuídate al salir del bosque, Aldo.
+	aldo: Ve con sigilo entre los árboles del norte, Tomás. El Lobo sigue patrullando el bosque.

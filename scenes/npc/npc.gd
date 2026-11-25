@@ -3,6 +3,7 @@ extends CharacterBody2D
 
 @export var npc_name: String = "Aldeano"
 @export var greeting_text: String = "¡Hola, Pastor!"
+@export var dialog_timeline: String = ""
 @export var move_speed: float = 44.0
 @export var wait_time: float = 2.0
 @export var loop_route: bool = true
@@ -16,6 +17,7 @@ var _direction_step: int = 1
 var _wait_timer: float = 0.0
 var _stuck_timer: float = 0.0
 var _last_position: Vector2 = Vector2.ZERO
+var _player_in_range: bool = false
 
 
 func _ready() -> void:
@@ -40,19 +42,34 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	var player := get_tree().get_first_node_in_group("player") as Node2D
+	if _is_dialogic_active():
+		velocity = Vector2.ZERO
+		if player != null:
+			_face_position(player.global_position)
+		_play_anim(&"idle")
+		return
+
 	if player != null:
 		var is_stealth: bool = player.has_method("is_stealth_active") and player.is_stealth_active()
-		var detect_radius: float = 12.0 if is_stealth else 28.0
+		var detect_radius: float = 16.0 if is_stealth else 34.0
 		var dist_to_player := global_position.distance_to(player.global_position)
-		if dist_to_player < detect_radius:
+		if dist_to_player <= detect_radius:
+			_player_in_range = true
 			velocity = Vector2.ZERO
 			_face_position(player.global_position)
 			_play_anim(&"idle")
 			if info_label != null:
-				info_label.text = npc_name + "\n\"" + greeting_text + "\""
+				if not dialog_timeline.is_empty():
+					info_label.text = npc_name + "\n[E] Hablar"
+				else:
+					info_label.text = npc_name + "\n\"" + greeting_text + "\""
 			return
-		elif info_label != null and info_label.text != npc_name:
-			info_label.text = npc_name
+		else:
+			_player_in_range = false
+			if info_label != null and info_label.text != npc_name:
+				info_label.text = npc_name
+	else:
+		_player_in_range = false
 
 	if patrol_waypoints.size() < 2:
 		velocity = Vector2.ZERO
@@ -132,3 +149,45 @@ func _play_anim(anim_name: StringName) -> void:
 	if animated_sprite.sprite_frames.has_animation(anim_name):
 		if animated_sprite.animation != anim_name or not animated_sprite.is_playing():
 			animated_sprite.play(anim_name)
+
+
+func _unhandled_input(event: InputEvent) -> void:
+	if not _player_in_range or dialog_timeline.is_empty() or _is_dialogic_active():
+		return
+	var player := get_tree().get_first_node_in_group("player")
+	if player != null and player.has_method("is_menu_open") and player.is_menu_open():
+		return
+	if _is_interact_event(event):
+		get_viewport().set_input_as_handled()
+		start_dialog()
+
+
+func _is_interact_event(event: InputEvent) -> bool:
+	if event.is_action_pressed("ui_accept"):
+		return true
+	if event is InputEventKey:
+		var key_ev := event as InputEventKey
+		if key_ev.pressed and not key_ev.echo:
+			return key_ev.keycode == KEY_E or key_ev.keycode == KEY_ENTER or key_ev.keycode == KEY_SPACE
+	return false
+
+
+func _is_dialogic_active() -> bool:
+	var dialogic_node := get_node_or_null("/root/Dialogic")
+	return dialogic_node != null and dialogic_node.get("current_timeline") != null
+
+
+func start_dialog() -> Node:
+	if dialog_timeline.is_empty() or _is_dialogic_active():
+		return null
+	var player := get_tree().get_first_node_in_group("player")
+	if player != null and player.has_method("hide_story_message"):
+		player.hide_story_message()
+	var dialogic_node := get_node_or_null("/root/Dialogic")
+	if dialogic_node == null:
+		return null
+	var layout_node: Node = dialogic_node.call("start", dialog_timeline)
+	var inputs_sub: Node = dialogic_node.get("Inputs") as Node
+	if inputs_sub != null and inputs_sub.has_method("block_input"):
+		inputs_sub.call("block_input", 0.15)
+	return layout_node

@@ -1,0 +1,15 @@
+{
+"@path": "res://addons/dialogic/Resources/character.gd",
+"@subpath": "",
+"_translation_id": "",
+"color": Color(0.82, 0.68, 0.94, 1),
+"custom_info": {},
+"default_portrait": "",
+"description": "Erudito que estudia las runas frente a la cámara ritual del Lobo.",
+"display_name": "Aldo (Erudito)",
+"mirror": false,
+"nicknames": ["Aldo"],
+"offset": Vector2(0, 0),
+"portraits": {},
+"scale": 1.0
+}

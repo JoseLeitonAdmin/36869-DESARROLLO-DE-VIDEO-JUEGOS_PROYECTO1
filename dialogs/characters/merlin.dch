@@ -1,0 +1,15 @@
+{
+"@path": "res://addons/dialogic/Resources/character.gd",
+"@subpath": "",
+"_translation_id": "",
+"color": Color(0.75, 0.65, 0.96, 1),
+"custom_info": {},
+"default_portrait": "",
+"description": "Anciano sabio conocedor de las leyendas del bosque y la niebla del olvido.",
+"display_name": "Merlín (Sabio)",
+"mirror": false,
+"nicknames": ["Merlín"],
+"offset": Vector2(0, 0),
+"portraits": {},
+"scale": 1.0
+}

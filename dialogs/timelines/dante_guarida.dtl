@@ -1,0 +1,12 @@
+dante: ¡Alto ahí, Tomás! Este poste con farol es la última luz del camino antes de adentrarse en el Bosque Oscuro.
+- ¿Qué hay más adelante entre los árboles?
+	tomas: La penumbra más allá de este sendero es absoluta. ¿Has visto al Lobo?
+	dante: Sí... merodea entre los claros del bosque en direcciones impredecibles y luego regresa a descansar a su rincón favorito en el centro de la espesura.
+	tomas: ¿Cómo puedo cruzar sin que me atrape?
+	dante: Enciende tu lámpara con [F] para proyectar luz hacia donde caminas y pulsa [C] para avanzar en sigilo cuando estés cerca de su territorio.
+- ¿Qué hay al final del bosque hacia el sur?
+	tomas: ¿Hasta dónde llega este sendero si sigo bajando hacia el sur?
+	dante: Al fondo del bosque se abre un claro con un monolito antiguo y la entrada a la cámara ritual. Mi compañero Aldo se adelantó hasta allí para estudiar las runas.
+- Gracias, Dante. Encenderé mi lámpara ahora mismo
+	tomas: Revisaré mi equipo antes de dar un paso más en la oscuridad.
+	dante: ¡Mucha suerte, Pastor! Si te ves en apuros, regresa siempre hacia la luz de este farol.
