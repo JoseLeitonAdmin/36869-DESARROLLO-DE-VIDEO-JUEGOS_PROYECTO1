@@ -1,14 +1,16 @@
-braulio: ¡Bienvenido a mi puesto, Tomás! Tengo aceite refinado para lámparas, cuerda resistente y provisiones para las noches largas.
+braulio: ¡Vaya, el famoso Tomás! Te vendería una campana nueva, pero seguro la usarías para despertar a todo el pueblo con otro falso ataque de lobo.
 if {GameState.village_quest_status} == 1:
-	- ¿Has visto el Engranaje del Reloj que perdió Clara?
-		tomas: Braulio, Clara perdió un antiguo engranaje de reloj por este lado del pueblo anoche. ¿Has visto algo?
-		braulio: ¡Conque era de ella! Hace un rato vi un destello metálico entre la hierba, justo al norte de mi puesto, junto a los árboles del extremo este. Ve a recogerlo con [E] antes de que alguien más lo pise.
-- ¿Tienes consejos para usar mejor mi lámpara?
-	tomas: La oscuridad del bosque del sur es cada vez más densa. ¿Cómo puedo aprovechar mejor la lámpara?
-	braulio: Tu lámpara de pastor concentra su haz de luz hacia adelante, donde miras, y deja un halo suave detrás. Si aún no la llevas contigo, recógela en la mesa de tu cabaña y enciéndela con [F].
-- ¿Qué sabes sobre moverse sin ser detectado?
-	tomas: Dicen que las criaturas del bosque tienen el oído muy fino.
-	braulio: ¡Así es! Si pulsas [C] para agacharte en modo sigilo, tus pasos serán mucho más silenciosos y ni las bestias ni los aldeanos te detectarán a distancia.
-- Solo estaba revisando las mercancías, hasta luego
-	tomas: Gracias, Braulio. Volveré si necesito más provisiones.
-	braulio: ¡Aquí estaré mientras los faroles del pueblo sigan encendidos!
+	- Busco una prueba material para Clara. ¿Viste caer algo cerca de tu puesto?
+		tomas: No estoy bromeando, Braulio. Busco un engranaje de reloj que cayó por esta zona anoche a medianoche.
+		braulio: Hum... ahora que lo mencionas, hace un rato vi brillar una pieza metálica entre la hierba, justo al norte de mi puesto, junto a los árboles de este rincón oriental. Ve y recógela con [E] si tanto te interesa.
+- ¿Por qué tienes encargos en tu libreta que nadie ha venido a recoger?
+	tomas: Mira tu mostrador, Braulio. Tienes paquetes marcados con iniciales que tachaste esta mañana sin saber por qué.
+	braulio: ¡Eh! ¿Cómo sabes eso? Es rarísimo... tenía tres sacos de harina apartados y hoy ni siquiera recuerdo qué vecinos los pidieron. Es como si se los hubiera tragado la tierra y mi memoria con ellos.
+	tomas: Se los llevó el lobo sobrenatural del bosque, y su maldición hace que solo yo pueda recordarlos.
+- ¿Qué sabes sobre cómo sobrevivir al acecho en el bosque oscuro?
+	tomas: Necesito adentrarme en el bosque del sur sin perder a mis ovejas.
+	braulio: Los viejos cazadores decían que las bestias de la sombra cazan de dos formas: si entras corriendo o de pie en su territorio amplio, corren más rápido que tú y te atacan al instante antes de alejarse.
+	braulio: Pero si vas agachado en sigilo con [C], su zona de detección se reduce; a oscuras buscará tus puntos ciegos, y si enciendes tu lámpara [F], la luz lo atraerá poco a poco en vez de espantarlo.
+- Gracias, Braulio. Seguiré buscando pruebas
+	tomas: Pronto todo el pueblo verá que esta vez no mentí.
+	braulio: Hechos, Tomás, hechos. Tráele pruebas a la gente de la plaza y quizá volvamos a creer en el pastor.

@@ -107,8 +107,8 @@ func _interact() -> void:
 	if GameState.village_quest_status == GameState.QuestStatus.NOT_STARTED:
 		if player != null and player.has_method("show_story_message"):
 			player.show_story_message(
-				"Objeto Perdido en el Pueblo",
-				"Un antiguo engranaje de reloj brilla entre la hierba. Quizá algún aldeano en la plaza central lo esté buscando."
+				"Prueba Material en el Pueblo",
+				"Un engranaje de bronce grabado con el nombre de Julián, el relojero borrado de la memoria del pueblo. Habla primero con Clara en la plaza."
 			)
 		return
 
@@ -116,8 +116,8 @@ func _interact() -> void:
 	GameState.collect_quest_item()
 	if player != null and player.has_method("show_story_message"):
 		player.show_story_message(
-			item_title + " obtenido",
-			"Has encontrado el Engranaje del Reloj que perdió Clara. Regresa a la plaza del pueblo y habla con ella para entregárselo."
+			"Prueba obtenida: " + item_title,
+			"Tiene grabada la dedicatoria de Julián para su hermana Clara. Llévaselo en la plaza para romper su olvido y demostrar que no mientes."
 		)
 	queue_free()
 

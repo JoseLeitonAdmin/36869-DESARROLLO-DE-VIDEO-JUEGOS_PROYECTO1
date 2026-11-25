@@ -1,11 +1,11 @@
-lucia: No te acerques demasiado al puente del sur cuando empiece a oscurecer, Tomás...
-- ¿Qué viste al otro lado del puente?
-	tomas: Pareces asustada, Lucía. ¿Viste algo moverse entre los árboles del sur?
-	lucia: Vi dos ojos amarillos fijos en la oscuridad, justo donde termina la luz del último farol. Caminaba en círculos y luego se quedaba inmóvil, esperando en silencio.
-	tomas: Es el Lobo. Si llevo mi lámpara encendida y avanzo con sigilo, podré vigilar sus movimientos sin que me sorprenda.
-- ¿Sabes si Clara pasó corriendo por aquí?
-	tomas: Clara perdió un objeto importante anoche mientras huía hacia la plaza.
-	lucia: La vi correr desde el camino del este, cerca del puesto de Braulio y los árboles del rincón oriental. Seguro se le cayó por esa zona.
-- Gracias por la advertencia, tendré cuidado
-	tomas: No bajaré la guardia, Lucía. Mantente cerca de las luces del pueblo.
-	lucia: Cuida bien de tus ovejas, Pastor. Si las pierdes, nadie podrá detener lo que viene del bosque.
+lucia: No me mires con esa cara de susto, Tomás. Ya nadie en el pueblo corre cuando gritas que viene el lobo, aunque... hoy no pienso cruzar el puente del sur.
+- ¿Por qué temes cruzar el puente si dices que mis alertas son mentira?
+	tomas: Si crees que el lobo es solo un invento mío, Lucía, ¿por qué miras hacia los pinos del sur temblando?
+	lucia: Porque al amanecer encontré un farol roto junto a la orilla y huellas que no pertenecen a ningún perro del valle. Además, vi una sombra enorme deslizarse hacia la luz del farol antes de ocultarse en los puntos ciegos detrás de los árboles.
+	tomas: Esa criatura acecha desde los ángulos donde no puedes verla, y la luz de la lámpara [F] la atrae: despacio si voy agachado con [C], o a toda velocidad si camino de pie.
+- ¿Viste a alguien huir hacia el este del pueblo anoche?
+	tomas: Alguien perdió un objeto grabado anoche mientras escapaba de esa sombra.
+	lucia: Escuché pasos apresurados cerca del puesto de Braulio y los árboles del rincón este del pueblo, justo antes de que el reloj de la plaza dejara de sonar a medianoche.
+- Quédate cerca de los faroles, Lucía
+	tomas: No bajes al río cuando oscurezca. Yo cruzaré el puente para investigar la guarida.
+	lucia: Si esta vez dices la verdad, Tomás... ojalá logres redimirte antes de que la tercera noche nos alcance a todos.

@@ -1,47 +1,50 @@
 if {GameState.village_quest_status} == 0:
-	clara: ¡Tomás! Menos mal que bajaste de la granja al pueblo. ¿Has mirado la Torre del Reloj de la plaza?
-	tomas: Las manecillas están detenidas justo antes de la medianoche. ¿Qué ocurrió anoche, Clara?
-	clara: Cuando se escucharon los aullidos en el lindero sur, corrí desde el mercado del este y se me cayó el Engranaje del Reloj de mi hermano... Sin esa pieza, nadie en el pueblo recuerda a los que desaparecen cada noche.
-	- Yo buscaré el engranaje en el pueblo y te lo traeré
+	clara: Si vienes a burlarte o a gritar que viene el lobo, Tomás, ahórratelo. Bastante extraña ha sido esta mañana frente a la Torre del Reloj como para soportar otra de tus farsas.
+	tomas: Clara, escúchame por favor. El reloj se detuvo a medianoche porque el lobo atacó de verdad... y se llevó a tu hermano Julián, el relojero.
+	clara: ¿Julián? ¿De qué estás hablando, Tomás? ¡Yo no tengo ningún hermano! ¿Ahora inventas familiares fantasmas para que el pueblo caiga en tus bromas pesadas?
+	tomas: (La maldición del lobo lo borró por completo de su memoria... Si quiero que me crea, necesito encontrar una prueba material).
+	- Te demostraré que digo la verdad: buscaré una prueba en el pueblo y te la traeré
 		[signal arg="accept_quest"]
-		tomas: Tranquila, Clara. Yo recorreré el pueblo, encontraré ese engranaje y te lo devolveré.
-		clara: ¡Gracias de corazón, Tomás! Lo perdí en el extremo este del pueblo, cerca de los árboles al norte del puesto del mercader Braulio.
-	- ¿Por qué dices que los aldeanos olvidan a quienes desaparecen?
-		tomas: Marta dijo algo parecido en la taberna... ¿Cómo es posible que olviden a su propia gente?
-		clara: Es la niebla que sube desde la Guarida del Lobo. Cada vez que el Lobo reclama a alguien, su recuerdo se borra al amanecer. Ese engranaje grabado es la única prueba que me queda. ¿Me ayudarás a recuperarlo?
-		- Cuenta conmigo, buscaré el engranaje por el pueblo
+		tomas: Anoche vi a Julián huir hacia el rincón este del pueblo antes de que la sombra lo alcanzara. Seguro dejó caer alguna pieza grabada del reloj. La encontraré y te la traeré como prueba.
+		clara: No sé por qué me tiemblan las manos al oír ese nombre... Está bien, pastor mentiroso: si de verdad existe tal prueba cerca de los árboles del este, junto al puesto de Braulio, tráela. Hasta entonces, no pronuncies más tus cuentos.
+	- ¿Por qué crees que tienes herramientas de relojero en tus manos si vives sola?
+		tomas: Mira tu propio delantal, Clara. Llevas aceite de relojería y llaves de precisión que no sabes usar. ¿Por qué las tendrías si Julián nunca existió?
+		clara: Yo... las encontré hoy sobre mi mesa al despertar. Sentí una angustia horrible, como si hubiera llorado toda la noche sin saber por qué. ¿Qué nos está pasando, Tomás?
+		- Déjame buscar el engranaje grabado en el pueblo para demostrarte la verdad
 			[signal arg="accept_quest"]
-			tomas: No dejaré que el pueblo olvide la verdad. Buscaré cerca del mercado del este y te lo traeré.
-			clara: ¡Qué alivio escucharte! Busca junto a los árboles al norte del puesto de Braulio, en el lado este del pueblo.
-		- Primero debo vigilar mis ovejas, volveré más tarde
-			tomas: Debo asegurarme de que el corral esté seguro antes de ponerme a buscar. Volveré en cuanto pueda.
-			clara: Lo entiendo, Tomás. Tus ovejas son tu vida, pero por favor no tardes demasiado... estaré aquí en la plaza.
-	- Ahora no puedo detenerme, debo regresar a la granja
-		tomas: Lo siento, Clara. Debo volver al granero antes de que caiga la noche.
-		clara: Ten mucho cuidado en el camino, Tomás. Si cambias de opinión, te estaré esperando junto a la Torre del Reloj.
+			tomas: Una criatura sobrenatural se está llevando a los aldeanos y borrando sus recuerdos. Vi caer un engranaje en el extremo este del pueblo, cerca del puesto de Braulio. Iré por él para probártelo.
+			clara: Si encuentras algo que explique este vacío en mi cabeza... tráemelo de inmediato a la plaza.
+		- Debo revisar mi rebaño primero, pero volveré para ayudarte
+			tomas: Resiste aquí en la plaza, Clara. Revisaré mis ovejas y volveré para buscar esa prueba.
+			clara: No tardes, Tomás... Este silencio frente al reloj detenido me está helando la sangre.
+	- Ahora no puedo detenerme, volveré más tarde
+		tomas: Volveré cuando tenga cómo probarte lo que ocurrió a medianoche.
+		clara: Más te vale que no sea otra de tus mentiras, Tomás. Al pueblo ya no le queda paciencia contigo.
 elif {GameState.village_quest_status} == 1:
-	clara: Tomás, ¿pudiste encontrar el Engranaje del Reloj que perdí en el pueblo?
-	- Recuérdame por dónde se te cayó exactamente
-		tomas: El pueblo es grande, Clara. ¿En qué rincón debería buscar primero?
-		clara: Huía desde el rincón este del pueblo hacia la plaza. Busca entre la hierba junto a los árboles que están justo al norte del puesto del mercader Braulio.
-	- Aún lo estoy buscando, enseguida te lo traigo
-		tomas: Todavía estoy revisando los alrededores del pueblo. No tardaré en encontrarlo.
-		clara: Gracias por no rendirte, Tomás. Si hablas con Braulio el mercader, quizá él haya visto dónde cayó.
+	clara: Seguiste dando vueltas por el pueblo, Tomás... ¿Dónde está esa supuesta prueba material de la que hablabas?
+	- ¿Viste algún rastro extraño esta mañana en el pueblo?
+		tomas: Necesito reconstruir por dónde corrió Julián antes de desaparecer.
+		clara: Esta mañana vi marcas en la tierra que iban hacia el extremo este del pueblo, justo entre los árboles que están al norte del puesto del mercader Braulio. Si algo cayó anoche, tiene que estar allí.
+	- Sigo buscando la prueba en el pueblo, no tardaré
+		tomas: Aún estoy rastreando el rincón oriental del pueblo. Enseguida vuelvo con la prueba.
+		clara: Date prisa... Cada hora que pasa siento la mente más nublada, como si la niebla del sur quisiera borrar algo más.
 elif {GameState.village_quest_status} == 2:
-	clara: ¡Tomás! Veo un brillo de bronce en tu zurrón... ¿Es el Engranaje del Reloj?
-	- Entregar el Engranaje del Reloj a Clara
+	clara: Tomás, volviste... ¿Qué es ese objeto de bronce que traes en las manos?
+	- Entregar el Engranaje del Reloj como prueba material
 		[signal arg="deliver_quest"]
-		tomas: Aquí lo tienes, Clara. Estaba oculto cerca de los árboles del este, tal como dijiste.
-		clara: ¡Lo recuperaste! Mira las inscripciones... aún conserva la fecha de la primera noche en que el Lobo acechó el valle.
-		clara: Escúchame bien, Tomás: mi hermano descubrió que el Lobo del bosque teme el haz directo de tu lámpara y pierde tu rastro si caminas agachado en sigilo. ¡Que este recuerdo proteja también a tu rebaño!
-	- Esperar un momento antes de entregarlo
-		tomas: Déjame observar un instante más las marcas que tiene grabadas antes de dártelo.
-		clara: Claro, Tomás, pero entrégamelo cuando termines para que podamos guardarlo a salvo en la plaza.
+		tomas: Léelo tú misma, Clara. Lo encontré entre la hierba del este. Es el Engranaje del Reloj de la plaza, y tiene una inscripción tallada en el reverso.
+		clara: «Para mi hermana Clara, de Julián... que el tiempo nunca borre nuestra voz». ¡Dios mío! ¡Julián! ¡Acabo de recordar su rostro y sus gritos en la niebla!
+		clara: ¡Perdóname por dudar de ti, Tomás! Decías la verdad: hay un lobo sobrenatural llevándose a nuestra gente y borrándolos de nuestra memoria.
+		clara: Escúchame bien: en los apuntes que Julián dejó en casa escribió que la bestia acecha desde los puntos ciegos en la oscuridad, y que la luz de las lámparas la atrae en vez de asustarla: se acerca despacio hacia la luz si vas agachado, pero corre a toda velocidad si vas de pie. ¡Has dado el primer paso para redimirte!
+	- Guardarlo un momento más antes de mostrárselo
+		tomas: Solo quería asegurarme de que la inscripción fuera legible antes de entregártelo.
+		clara: ¡No juegues con mi incertidumbre, Tomás! Si tienes una prueba real, muéstramela por favor.
 else:
-	clara: Gracias por devolverme el Engranaje del Reloj, Tomás. Mientras conservemos la memoria, el pueblo no volverá a ignorar tus advertencias.
-	- ¿Qué sabes sobre la Guarida del Lobo al sur?
-		tomas: ¿Qué hay más allá del último farol cruzando el puente del sur?
-		clara: Más allá del farol la penumbra es total. Enciende tu lámpara con [F] para alumbrar hacia adelante y usa el sigilo con [C] cuando escuches las pisadas del Lobo.
-	- Cuídate mucho, Clara
-		tomas: Mantente cerca de los faroles de la plaza, Clara. Yo vigilaré el lindero.
-		clara: Que la luz de tu lámpara te guíe siempre de regreso, Pastor.
+	clara: Gracias a la prueba que me trajiste, Tomás, el recuerdo de mi hermano Julián sigue vivo en mí. Ya no dejaré que nadie en la plaza diga que estás mintiendo.
+	- ¿Cómo podemos salvar a los desaparecidos en estas tres noches?
+		tomas: El lobo sigue oculto en la guarida al sur del puente. ¿Qué más decían las notas de Julián?
+		clara: Decían que si caminas sin sigilo por el bosque oscuro, el lobo te detecta a gran distancia, corre a toda velocidad y ataca de inmediato antes de retirarse a las sombras.
+		clara: En cambio, si avanzas agachado con [C], su zona de ataque es más reducida: a oscuras buscará tus puntos ciegos, y si enciendes tu lámpara [F], la luz lo atraerá lentamente, dándote tiempo de reaccionar.
+	- Mantén el engranaje contigo para no volver a olvidar
+		tomas: No sueltes ese engranaje, Clara. Yo me encargaré de enfrentar la oscuridad del sur.
+		clara: Confío en ti, Pastor. Protege tus ovejas y devuélvenos a nuestra gente.

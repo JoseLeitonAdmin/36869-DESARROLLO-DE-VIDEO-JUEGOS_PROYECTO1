@@ -12,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://cxafqf5fp2h6e" path="res://assets/effects/light_radial.png" id="10_light"]
 [ext_resource type="Script" uid="uid://b7536753n8gaj" path="res://scenes/maps/canopy_controller.gd" id="11_canopy"]
 [ext_resource type="Texture2D" uid="uid://dgsjintlrnexy" path="res://assets/structures/clock_face.png" id="12_clock"]
-[ext_resource type="Script" path="res://scenes/interactables/quest_item_pickup.gd" id="13_quest_pickup"]
+[ext_resource type="Script" uid="uid://ig212oc2f10p" path="res://scenes/interactables/quest_item_pickup.gd" id="13_quest_pickup"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_canopy"]
 shader = ExtResource("9_shader")
@@ -228,7 +228,6 @@ shape = SubResource("RectangleShape2D_inspect")
 [node name="EngranajePerdido" type="Area2D" parent="Interactables" unique_id=1954012388]
 position = Vector2(824, 392)
 script = ExtResource("13_quest_pickup")
-item_title = "Engranaje del Reloj"
 
 [node name="Sprite2D" type="Sprite2D" parent="Interactables/EngranajePerdido" unique_id=1954012389]
 texture_filter = 1

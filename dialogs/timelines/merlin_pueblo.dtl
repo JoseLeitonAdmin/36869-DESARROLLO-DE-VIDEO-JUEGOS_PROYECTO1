@@ -1,12 +1,13 @@
-merlin: El viento del sur trae antiguos presagios, joven Tomás. Pocos en esta aldea recuerdan ya la vieja fábula del Pastor.
-- ¿Cuál es el secreto de la Guarida del Lobo?
-	tomas: Merlín, tú conoces las crónicas antiguas del valle. ¿Qué se oculta en lo profundo del bosque oscuro?
-	merlin: Al fondo de la arboleda del sur se alza un altar ritual rodeado de monolitos. El Lobo no solo devora rebaños; devora la memoria del pueblo para que nadie acuda cuando grites pidiendo ayuda.
-	tomas: Entonces debo demostrar la verdad y proteger cada una de mis ovejas.
-	merlin: Recuerda que tus cuatro ovejas representan tu vínculo vital con esta tierra. Cuídalas como a tu propia vida.
-- ¿Cómo puedo romper el olvido de los aldeanos?
-	tomas: Clara teme que mañana nadie recuerde a quienes faltan en el pueblo.
-	merlin: Los objetos cargados de historia anclan los recuerdos. Si ayudas a Clara en la plaza a recuperar la pieza del reloj perdido en el pueblo, fortalecerás la memoria de toda la aldea.
-- Seguiré tu consejo, sabio Merlín
-	tomas: Gracias por tus palabras, Merlín. Mantendré mi lámpara lista.
-	merlin: Camina con prudencia entre las sombras, Pastor.
+merlin: Los aldeanos te miran con rencor por tus antiguas mentiras, Tomás... pero yo observo las estrellas y sé que el castigo que cayó sobre este pueblo no es una fábula común.
+- ¿Tú sí me crees que un lobo sobrenatural está borrando a la gente?
+	tomas: ¡Merlín! Todos me llaman mentiroso, pero cada noche falta alguien más y su recuerdo desaparece de la mente de sus propias familias. ¿Por qué solo yo los recuerdo?
+	merlin: Porque tú invocaste al lobo con tus mentiras, joven pastor, y ahora tu destino está atado al suyo. La maldición del Devorador de Memorias alimenta su sombra con la desconfianza de la aldea.
+	tomas: ¿Y cómo puedo romper esa maldición antes de que pasen las tres noches críticas?
+	merlin: La memoria borrada deja grietas en el mundo físico: objetos, relojes detenidos, prendas con nombres grabados. Reúne esas pruebas materiales, entrégaselas a los aldeanos como Clara en la plaza y reconstruye la verdad antes de perder tu última oveja.
+- ¿Cómo actúa la bestia cuando alguien entra en su bosque oscuro?
+	tomas: ¿Qué me espera al cruzar el puente del sur hacia su guarida?
+	merlin: El Lobo de la Penumbra es astuto. Si caminas erguido sin sigilo, su zona de ataque es muy amplia: se abalanzará a gran velocidad, te herirá de inmediato y se alejará entre las tinieblas.
+	merlin: Si te agachas en sigilo con [C], su zona de ataque disminuye, pero a oscuras te perseguirá buscando tus puntos ciegos a tu espalda. Y recuerda que la luz de tu lámpara [F] no lo ahuyenta: lo atrae hacia ti, despacio si permaneces agachado, o a toda carrera si vas de pie.
+- Cumpliré mi promesa y redimiré mi nombre, Merlín
+	tomas: No dejaré que el pueblo desaparezca en el olvido.
+	merlin: Tienes tres noches críticas y cuatro ovejas que guardan tu vida, Tomás. Que tu lámpara no tiemble.

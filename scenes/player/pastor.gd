@@ -46,6 +46,9 @@ var _bed_menu: Control = null
 var _bed_status_label: Label = null
 var _bed_feedback_label: Label = null
 
+var _game_over_menu: Control = null
+var _game_over_summary_label: Label = null
+
 var _time_tween: Tween = null
 var _facing_dir: String = "down"
 var _facing_left: bool = false
@@ -171,6 +174,9 @@ func _unhandled_input(event: InputEvent) -> void:
 				return
 
 			if key_ev.keycode == KEY_ESCAPE:
+				if _game_over_menu != null and _game_over_menu.visible:
+					get_viewport().set_input_as_handled()
+					return
 				if _bed_menu != null and _bed_menu.visible:
 					close_bed_save_menu()
 				elif _dialog_panel != null and _dialog_panel.visible:
@@ -314,7 +320,40 @@ func get_lantern_aim_angle() -> float:
 func is_menu_open() -> bool:
 	var pause_open := _pause_menu != null and _pause_menu.visible
 	var bed_open := _bed_menu != null and _bed_menu.visible
-	return pause_open or bed_open
+	var game_over_open := _game_over_menu != null and _game_over_menu.visible
+	return pause_open or bed_open or game_over_open
+
+
+func is_game_over_open() -> bool:
+	return _game_over_menu != null and _game_over_menu.visible
+
+
+func open_game_over_menu() -> void:
+	if _game_over_menu == null:
+		return
+	if _pause_menu != null:
+		_pause_menu.visible = false
+	if _bed_menu != null:
+		_bed_menu.visible = false
+	if _dialog_panel != null:
+		_dialog_panel.visible = false
+	var dialogic_node := get_node_or_null("/root/Dialogic")
+	if dialogic_node != null and dialogic_node.get("current_timeline") != null:
+		dialogic_node.call("end_timeline", true)
+	if _game_over_summary_label != null:
+		_game_over_summary_label.text = (
+			"Te has quedado sin ovejas en la Noche " + str(GameState.current_night) + ".\n"
+			+ "El Lobo sobrenatural ha devorado tu último vínculo con el pueblo."
+		)
+	_game_over_menu.visible = true
+	_sync_tree_pause()
+
+
+func close_game_over_menu() -> void:
+	if _game_over_menu == null:
+		return
+	_game_over_menu.visible = false
+	_sync_tree_pause()
 
 
 func is_dialog_active() -> bool:
@@ -406,10 +445,12 @@ func _on_lighter_toggled(_is_on: bool) -> void:
 	_refresh_inventory_hud()
 
 
-func _on_sheep_changed(_new_count: int) -> void:
+func _on_sheep_changed(new_count: int) -> void:
 	_refresh_sheep_hud()
 	_refresh_pause_menu_labels()
 	_refresh_bed_menu_labels()
+	if new_count <= 0:
+		open_game_over_menu()
 
 
 func _on_inventory_changed() -> void:
@@ -585,6 +626,42 @@ func _on_pause_quit_pressed() -> void:
 	get_tree().quit()
 
 
+func _on_game_over_restart_pressed() -> void:
+	close_game_over_menu()
+	get_tree().paused = false
+	GameState.reset_state()
+	TimeManager.set_time(TimeManager.TimeOfDay.DAY)
+	MapTransition.next_spawn_point = "Default"
+	_refresh_sheep_hud()
+	_refresh_inventory_hud()
+	if get_tree() != null and get_tree().current_scene != null:
+		get_tree().change_scene_to_file("res://scenes/maps/granero.tscn")
+	else:
+		_apply_transition_spawn()
+
+
+func _on_game_over_load_save_pressed() -> void:
+	if not GameState.has_save_game():
+		_on_game_over_restart_pressed()
+		return
+	close_game_over_menu()
+	get_tree().paused = false
+	var ok := GameState.load_game()
+	if not ok:
+		_on_game_over_restart_pressed()
+		return
+	if GameState.sheep_count <= 0:
+		GameState.set_sheep_count(GameState.max_sheep)
+	_refresh_sheep_hud()
+	_refresh_inventory_hud()
+	var target_map := GameState.last_saved_map if not GameState.last_saved_map.is_empty() else "res://scenes/maps/granero.tscn"
+	if get_tree() != null and get_tree().current_scene != null and ResourceLoader.exists(target_map):
+		MapTransition.next_spawn_point = ""
+		get_tree().change_scene_to_file(target_map)
+	elif GameState.last_saved_pos != Vector2.ZERO:
+		global_position = GameState.last_saved_pos
+
+
 func _on_time_changed(new_time: TimeManager.TimeOfDay) -> void:
 	if not is_inside_tree():
 		return
@@ -732,6 +809,7 @@ func _build_hud() -> void:
 	_build_story_dialog_hud()
 	_build_pause_menu_hud()
 	_build_bed_save_menu_hud()
+	_build_game_over_menu_hud()
 
 
 func _build_top_left_sheep_hud() -> void:
@@ -1152,6 +1230,109 @@ func _build_bed_save_menu_hud() -> void:
 	bfb_ls.outline_color = Color(0.98, 0.93, 0.80, 0.85)
 	_bed_feedback_label.label_settings = bfb_ls
 	vbox.add_child(_bed_feedback_label)
+
+
+func _build_game_over_menu_hud() -> void:
+	_game_over_menu = Control.new()
+	_game_over_menu.name = "GameOverMenu"
+	_game_over_menu.visible = false
+	_game_over_menu.set_anchors_preset(Control.PRESET_FULL_RECT)
+	_hud_layer.add_child(_game_over_menu)
+
+	var dimmer := ColorRect.new()
+	dimmer.set_anchors_preset(Control.PRESET_FULL_RECT)
+	dimmer.color = Color(0.06, 0.02, 0.02, 0.78)
+	_game_over_menu.add_child(dimmer)
+
+	var frame := NinePatchRect.new()
+	frame.texture = HUD_FRAME_F_TEX
+	frame.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
+	frame.self_modulate = Color(0.88, 0.72, 0.56, 0.92)
+	frame.patch_margin_left = 20
+	frame.patch_margin_top = 20
+	frame.patch_margin_right = 20
+	frame.patch_margin_bottom = 20
+	frame.anchor_left = 0.5
+	frame.anchor_right = 0.5
+	frame.anchor_top = 0.5
+	frame.anchor_bottom = 0.5
+	frame.offset_left = -195
+	frame.offset_right = 195
+	frame.offset_top = -150
+	frame.offset_bottom = 150
+	_game_over_menu.add_child(frame)
+
+	var parchment_inner := NinePatchRect.new()
+	parchment_inner.texture = HUD_HEADER_A_TEX
+	parchment_inner.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
+	parchment_inner.self_modulate = Color(0.95, 0.87, 0.74, 0.90)
+	parchment_inner.patch_margin_left = 20
+	parchment_inner.patch_margin_top = 10
+	parchment_inner.patch_margin_right = 20
+	parchment_inner.patch_margin_bottom = 10
+	parchment_inner.position = Vector2(14, 16)
+	parchment_inner.size = Vector2(362, 268)
+	frame.add_child(parchment_inner)
+
+	var header := NinePatchRect.new()
+	header.texture = HUD_HEADER_A_TEX
+	header.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
+	header.self_modulate = Color(0.98, 0.88, 0.72, 0.96)
+	header.patch_margin_left = 24
+	header.patch_margin_top = 8
+	header.patch_margin_right = 24
+	header.patch_margin_bottom = 8
+	header.position = Vector2(75, -16)
+	header.size = Vector2(240, 44)
+	frame.add_child(header)
+
+	var header_lbl := Label.new()
+	header_lbl.name = "GameOverTitleLabel"
+	header_lbl.set_anchors_preset(Control.PRESET_FULL_RECT)
+	header_lbl.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	header_lbl.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+	header_lbl.text = "GAME OVER"
+	var h_ls := LabelSettings.new()
+	h_ls.font_size = 18
+	h_ls.font_color = Color(0.52, 0.08, 0.06, 1.0)
+	h_ls.outline_size = 3
+	h_ls.outline_color = Color(1.0, 0.93, 0.78, 0.95)
+	header_lbl.label_settings = h_ls
+	header.add_child(header_lbl)
+
+	var vbox := VBoxContainer.new()
+	vbox.position = Vector2(36, 40)
+	vbox.size = Vector2(318, 232)
+	vbox.add_theme_constant_override("separation", 10)
+	frame.add_child(vbox)
+
+	_game_over_summary_label = Label.new()
+	_game_over_summary_label.name = "GameOverMessageLabel"
+	_game_over_summary_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	_game_over_summary_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	_game_over_summary_label.text = "Te has quedado sin ovejas.\nEl Lobo sobrenatural ha devorado tu último vínculo con el pueblo."
+	var sum_ls := LabelSettings.new()
+	sum_ls.font_size = 12
+	sum_ls.font_color = Color(0.28, 0.14, 0.07, 0.98)
+	sum_ls.outline_size = 2
+	sum_ls.outline_color = Color(0.98, 0.92, 0.78, 0.85)
+	_game_over_summary_label.label_settings = sum_ls
+	vbox.add_child(_game_over_summary_label)
+
+	var restart_btn := _create_hud_menu_button("Reiniciar Juego (Nueva Partida)", HUD_OPTIONS_BTN_TEX)
+	restart_btn.name = "RestartGameButton"
+	restart_btn.pressed.connect(_on_game_over_restart_pressed)
+	vbox.add_child(restart_btn)
+
+	var load_save_btn := _create_hud_menu_button("Reiniciar desde Último Guardado", HUD_HELP_BTN_TEX)
+	load_save_btn.name = "RetrySaveButton"
+	load_save_btn.pressed.connect(_on_game_over_load_save_pressed)
+	vbox.add_child(load_save_btn)
+
+	var quit_btn := _create_hud_menu_button("Salir del Juego", HUD_EXIT_BTN_TEX)
+	quit_btn.name = "QuitGameButton"
+	quit_btn.pressed.connect(_on_pause_quit_pressed)
+	vbox.add_child(quit_btn)
 
 
 func _create_hud_menu_button(label_text: String, icon_sheet: Texture2D = null) -> Button:

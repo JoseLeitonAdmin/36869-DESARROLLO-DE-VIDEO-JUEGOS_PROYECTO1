@@ -1,12 +1,12 @@
-aldo: ¡Por las estrellas, Tomás! Lograste cruzar toda la espesura del Bosque Oscuro sin que el Lobo te detuviera.
-- ¿Qué descubriste en las runas de esta cámara?
-	tomas: Aldo, ¿qué dicen las inscripciones talladas frente a la guarida?
-	aldo: Las runas hablan de un pacto antiguo: el Lobo se alimenta del silencio y la duda de la aldea. Cuando un pastor grita sin pruebas, la niebla borra la memoria de los aldeanos.
-	tomas: Por eso Clara necesitaba recuperar el engranaje grabado del reloj en el pueblo...
-	aldo: ¡Exactamente! Con pruebas reales y la luz de tu lámpara, el engaño de la bestia empieza a debilitarse.
-- ¿Es seguro acercarse al altar del sur?
-	tomas: ¿Qué hay justo detrás de estos muros de piedra?
-	aldo: Es el altar ritual del Lobo Feroz. Puedes inspeccionarlo con [E] llevando tu lámpara encendida, pero no apagues tu luz en ningún momento.
-- Regresaré al pueblo con esta información
-	tomas: Debo volver con los aldeanos antes de que la noche sea más cerrada. Cuídate al salir del bosque, Aldo.
-	aldo: Ve con sigilo entre los árboles del norte, Tomás. El Lobo sigue patrullando el bosque.
+aldo: ¡Tomás! Nunca imaginé que el pastor del que todos desconfían en el pueblo lograría esquivar los puntos ciegos del Lobo hasta llegar a esta cámara.
+- ¿Qué revelan estas runas sobre la maldición de la memoria?
+	tomas: Aldo, ¿por qué soy el único en todo el valle que recuerda a los aldeanos que el lobo se ha llevado?
+	aldo: Las inscripciones del monolito lo explican todo: la bestia nació del descrédito y el miedo. Aquel que dio la falsa alarma conserva la memoria como condena, mientras el resto del pueblo olvida a cada víctima al amanecer.
+	tomas: Entonces recolectar pruebas materiales y devolverles sus recuerdos es la única forma de romper el hechizo y redimirme.
+	aldo: ¡Así es! Cada prueba que entregas en el pueblo debilita el poder ritual de esta guarida durante las tres noches críticas.
+- ¿Qué hay dentro del altar ritual detrás de ti?
+	tomas: Veo restos de telas y objetos junto al altar de piedra del sur.
+	aldo: Son pertenencias de quienes fueron arrastrados a la penumbra. Examina el altar con [E] llevando tu lámpara encendida, y cuando regreses hacia el norte, mantente agachado con [C]: recuerda que la luz atraerá al lobo poco a poco, pero si dejas el sigilo correrá tras de ti al instante.
+- Regresaré al pueblo para salvar a los demás
+	tomas: No perderé a mi rebaño. Demostraré la verdad ante toda la aldea.
+	aldo: ¡Cuidado al cruzar el bosque de vuelta, Tomás! No dejes que la bestia gane tu punto ciego.

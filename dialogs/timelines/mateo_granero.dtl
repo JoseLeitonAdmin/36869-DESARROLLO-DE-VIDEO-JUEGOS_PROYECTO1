@@ -1,10 +1,17 @@
-mateo: ¡Hola, Tomás! Acabo de contar el rebaño en el corral: las ovejas están tranquilas, pero no debemos confiarnos.
-- ¿Cómo están las ovejas del corral?
-	tomas: ¿Has notado si las ovejas se ponen nerviosas cuando cae la tarde?
-	mateo: Se agrupan cerca del portón en cuanto baja el sol. Recuerda que cada oveja de tu rebaño es tu vida como pastor; si te acercas a ellas en sigilo con [C], ni siquiera se asustarán.
-- ¿Viste dónde dejé mi lámpara de mano?
-	tomas: Necesito mi lámpara para inspeccionar el camino oscuro del sur.
-	mateo: La dejaste sobre la mesa de madera dentro de tu cabaña, justo al norte del corral. Entra con [E], tómala y podrás encenderla en cualquier momento pulsando [F].
-- Mantén vigilado el corral mientras voy al pueblo
-	tomas: Voy a acercarme al pueblo para hablar con los aldeanos. Vigila bien la cerca, Mateo.
-	mateo: ¡Descuida, patrón! Y cuando vuelvas cansado, puedes descansar y guardar tu progreso en la cama de la cabaña.
+mateo: Tomás... menos mal que sigues aquí en la granja. Después de tus últimas bromas gritando que venía el lobo, nadie en el pueblo quiere dirigirte la palabra.
+tomas: Esta vez no es una broma, Mateo. Anoche vi una bestia enorme entre la niebla... no era un lobo normal. Y hoy falta gente en el pueblo, aunque nadie parece recordarlo.
+mateo: ¿Gente desaparecida? Tomás, yo no recuerdo que falte nadie... pero te conozco desde niño y veo el terror en tus ojos. Esta granja es tu zona segura: mientras estés aquí, yo te ayudaré a vigilar el corral.
+- ¿Qué debo hacer para que el pueblo me crea antes de que sea tarde?
+	tomas: Si grito que hay un lobo, me cerrarán las puertas en la cara. ¿Cómo rompo esta maldición antes de que pasen las tres noches?
+	mateo: Palabras ya no bastan, Tomás; perdiste su confianza. Necesitas recolectar pruebas materiales de quienes desaparecieron. Si les muestras un objeto real que demuestre que alguien estuvo allí, tendrán que enfrentarse a la verdad.
+	tomas: En la plaza vi a Clara confundida frente a la Torre del Reloj. Ella ni siquiera recuerda a su hermano Julián, el relojero que el lobo se llevó anoche.
+	mateo: ¡Empieza por ahí! Ve al pueblo, habla con Clara y busca alguna prueba material del relojero para que recupere la memoria.
+- ¿Cómo funcionan mis ovejas y cómo me protejo en la oscuridad?
+	tomas: Siento que la criatura también acecha mi rebaño cada vez que me adentro en las sombras.
+	mateo: Tus cuatro ovejas son tu vínculo con esta tierra y tu propia vida. Si el lobo te ataca tres o cuatro veces y pierdes a todas tus ovejas antes de terminar las tres noches críticas, todo habrá terminado.
+	mateo: Entra a tu cabaña y toma la lámpara de la mesa para alumbrar con [F]. Y recuerda: si caminas de pie en el bosque oscuro, el lobo te detectará desde lejos, correrá rapidísimo y te atacará de inmediato.
+	tomas: ¿Y si avanzo agachado en sigilo con [C]?
+	mateo: Si vas agachado con [C], su zona para detectarte a oscuras será menor, pero buscará tus puntos ciegos por la espalda. Y ten cuidado con tu lámpara [F]: ¡la luz no lo asusta, lo atrae! Si estás agachado se acercará a la luz despacio, pero si no estás agachado correrá mucho más rápido para atacarte.
+- Voy a prepararme antes de salir hacia el pueblo
+	tomas: Revisaré la cabaña y saldré hacia el pueblo para buscar pruebas. Gracias por no darme la espalda, Mateo.
+	mateo: Cuídate, muchacho. Recuerda que siempre puedes regresar a esta zona segura y usar tu cama con [E] para descansar y guardar fuerzas entre cada noche crítica.

@@ -1,12 +1,12 @@
-dante: ¡Alto ahí, Tomás! Este poste con farol es la última luz del camino antes de adentrarse en el Bosque Oscuro.
-- ¿Qué hay más adelante entre los árboles?
-	tomas: La penumbra más allá de este sendero es absoluta. ¿Has visto al Lobo?
-	dante: Sí... merodea entre los claros del bosque en direcciones impredecibles y luego regresa a descansar a su rincón favorito en el centro de la espesura.
-	tomas: ¿Cómo puedo cruzar sin que me atrape?
-	dante: Enciende tu lámpara con [F] para proyectar luz hacia donde caminas y pulsa [C] para avanzar en sigilo cuando estés cerca de su territorio.
-- ¿Qué hay al final del bosque hacia el sur?
-	tomas: ¿Hasta dónde llega este sendero si sigo bajando hacia el sur?
-	dante: Al fondo del bosque se abre un claro con un monolito antiguo y la entrada a la cámara ritual. Mi compañero Aldo se adelantó hasta allí para estudiar las runas.
-- Gracias, Dante. Encenderé mi lámpara ahora mismo
-	tomas: Revisaré mi equipo antes de dar un paso más en la oscuridad.
-	dante: ¡Mucha suerte, Pastor! Si te ves en apuros, regresa siempre hacia la luz de este farol.
+dante: ¡Detente junto a este farol, Tomás! Sé que en el pueblo nadie cree tus gritos sobre el lobo, pero yo he visto las sombras moverse más allá de este camino y sé que no estás fingiendo.
+- ¿Has visto cómo caza el lobo dentro del bosque oscuro?
+	tomas: Dante, necesito cruzar el bosque para reunir pruebas de los aldeanos desaparecidos. ¿Cómo se comporta la criatura ahí dentro?
+	dante: Lo he observado desde este último poste de luz. Si entras de pie sin usar sigilo, su zona de ataque es enorme: corre muchísimo más rápido, te ataca de inmediato para arrebatarte una oveja y luego se aleja hacia la espesura.
+	tomas: ¿Y si avanzo agachado en modo sigilo con [C]?
+	dante: Si vas agachado con [C], su zona de ataque se reduce bastante y a oscuras buscará siempre tus puntos ciegos por la espalda. ¡Y cuidado con tu lámpara [F]! La luz no lo asusta, lo atrae: si estás agachado se acercará a tu luz lentamente, pero si no estás agachado correrá muchísimo más rápido hacia ti.
+- ¿Adónde lleva el sendero al fondo de la arboleda?
+	tomas: ¿Qué hay en el extremo sur de este bosque en penumbra?
+	dante: Al fondo se encuentra la Guarida del Lobo y su cámara ritual. El erudito Aldo bajó hasta allí siguiendo restos de objetos de los aldeanos que nadie en el pueblo recuerda.
+- Encenderé mi lámpara y avanzaré con sigilo
+	tomas: Gracias por creer en mí, Dante. Usaré [F] y [C] para cruzar sin que me tome por la espalda.
+	dante: ¡Vigila siempre tus puntos ciegos, Pastor! La luz de tu lámpara solo alumbra con fuerza hacia adelante.
